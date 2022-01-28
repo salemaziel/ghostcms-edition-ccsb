@@ -1,0 +1,13 @@
+{{!< default}}
+
+<div class="content-area">
+    <main class="site-main">
+        {{#post}}
+            {{> page width="narrow"}}
+        {{/post}}
+
+
+    </main>
+</div>
+
+{{#contentFor "body_class"}}{{#if @site.logo}}{{#if @site.cover_image}} with-full-header{{/if}}{{/if}}{{/contentFor}}

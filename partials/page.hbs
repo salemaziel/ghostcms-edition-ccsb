@@ -1,0 +1,25 @@
+<article class="single {{post_class}}">
+    <header class="single-header kg-canvas">
+
+        <h1 class="single-title">{{title}}</h1>
+
+        {{#if custom_excerpt}}
+            <div class="single-excerpt">
+                {{custom_excerpt}}
+            </div>
+        {{/if}}
+
+        {{#if feature_image}}
+            {{#unless no_image}}
+                <div class="single-media kg-width-{{width}}">
+                    <img srcset="{{> srcset}}" sizes="(min-width: 1023px) 920px, calc(90vw)" src="{{img_url feature_image size="l"}}" alt="{{title}}">
+                </div>
+            {{/unless}}
+        {{/if}}
+    </header>
+
+    <div class="single-content kg-canvas u-text-format">
+        {{content}}
+    </div>
+
+</article>

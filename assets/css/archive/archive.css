@@ -1,0 +1,9 @@
+.archive {
+    margin-bottom: 6vmin;
+}
+
+.archive-media {
+    overflow: hidden;
+    margin: 0 auto 3rem;
+    width: 400px;
+}

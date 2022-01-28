@@ -1,0 +1,36 @@
+{{!< default}}
+
+<div class="content-area">
+    <main class="site-main">
+       {{#tag}}
+            <section class="archive">
+                <header class="single-header kg-canvas">
+                    <h1 class="single-title">The Archive</h1>
+                    {{#if description}}
+                        <div class="single-excerpt">{{description}}</div>
+                    {{/if}}
+                </header>
+                <div style="display: flex; flex-direction:row; justify-content:center; align-content:center;">
+                {{#if feature_image}}
+                    <div class="archive-media u-placeholder rounded square">
+                        <img class="u-object-fit" src="{{img_url feature_image size="s"}}" alt="{{name}}">
+                    </div>
+                {{/if}}
+                </div>
+
+            </section>
+        {{/tag}}
+
+        <div class="post-feed expanded container">
+
+            {{#foreach posts}}
+                {{#has tag="archive"}}
+                    {{> "loop"}}
+                {{/has}}
+            {{/foreach}}
+        </div>
+    {{pagination}}
+    </main>
+</div>
+
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{#if @site.logo}}{{#if @site.cover_image}} with-alt-header{{/if}}{{/if}}{{/contentFor}}
